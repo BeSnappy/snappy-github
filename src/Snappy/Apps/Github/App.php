@@ -47,7 +47,7 @@ class App extends BaseApp implements TagsChangedHandler {
 	 */
 	public $settings = array(
 		array('name' => 'token', 'type' => 'text', 'help' => 'Enter your Github API Token'),
-		array('name' => 'username', 'type' => 'text', 'help' => 'Enter your Github usernmae'),
+		array('name' => 'owner', 'type' => 'text', 'help' => 'Enter the repository owner'),
 		array('name' => 'repository', 'type' => 'text', 'help' => 'Enter the repository name'),
 	);
 
@@ -68,7 +68,7 @@ class App extends BaseApp implements TagsChangedHandler {
 			$link = 'URL: https://app.besnappy.com/home#ticket/'.$ticket['id'];
 			$body = head($ticket['notes']);
 
-			$client->api('issues')->create($this->config['username'], $this->config['repository'], array(
+			$client->api('issues')->create($this->config['owner'], $this->config['repository'], array(
 				'title' => $ticket['default_subject'],
 				'body' => $link.PHP_EOL.PHP_EOL.$body,
 			));
