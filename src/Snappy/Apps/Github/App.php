@@ -47,6 +47,8 @@ class App extends BaseApp implements TagsChangedHandler {
 	 */
 	public $settings = array(
 		array('name' => 'token', 'type' => 'text', 'help' => 'Enter your Github API Token'),
+		array('name' => 'username', 'type' => 'text', 'help' => 'Enter your Github usernmae'),
+		array('name' => 'repository', 'type' => 'text', 'help' => 'Enter the repository name'),
 	);
 
 	/**
