@@ -52,7 +52,7 @@ class App extends BaseApp implements TagsChangedHandler {
 	);
 
 	/**
-	 * Handle the creation of a new contact.
+	 * Handle tags changed.
 	 *
 	 * @param  array  $ticket
 	 * @param  array  $added
@@ -65,7 +65,7 @@ class App extends BaseApp implements TagsChangedHandler {
 		{
 			$client = $this->getClient();
 
-			$link = 'URL: https://app.besnappy.com/home#ticket/'.$ticket['id'];
+			$link = 'URL: https://app.besnappy.com/#ticket/'.$ticket['id'];
 			$body = head($ticket['notes']);
 
 			$client->api('issues')->create($this->config['owner'], $this->config['repository'], array(
