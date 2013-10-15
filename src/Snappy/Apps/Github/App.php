@@ -24,7 +24,7 @@ class App extends BaseApp implements TagsChangedHandler {
 	 *
 	 * @var string
 	 */
-	public $notes = '';
+	public $notes = '<p>You can generate a token from your <a href="https://github.com/settings/applications" target="_blank">GitHub Settings</a> under "Personal Access Token"</p>';
 
 	/**
 	 * The application's icon filename.
@@ -56,7 +56,7 @@ class App extends BaseApp implements TagsChangedHandler {
 		array('name' => 'token', 'type' => 'text', 'help' => 'Enter your Github API Token'),
 		array('name' => 'owner', 'type' => 'text', 'help' => 'Enter the repository owner'),
 		array('name' => 'repository', 'type' => 'text', 'help' => 'Enter the repository name'),
-		array('name' => 'tag', 'type' => 'text', 'placeholder' => '#github', 'help' => 'Enter the tag that should trigger the app'),
+		array('name' => 'Watch for tag', 'type' => 'text', 'placeholder' => '#github', 'help' => 'Tickets with this tag will create an issue in GitHub.'),
 	);
 
 	/**
