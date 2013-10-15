@@ -53,9 +53,9 @@ class App extends BaseApp implements TagsChangedHandler {
 	 * @var array
 	 */
 	public $settings = array(
-		array('name' => 'token', 'type' => 'text', 'help' => 'Enter your Github API Token'),
-		array('name' => 'owner', 'type' => 'text', 'help' => 'Enter the repository owner'),
-		array('name' => 'repository', 'type' => 'text', 'help' => 'Enter the repository name'),
+		array('name' => 'token', 'type' => 'text', 'help' => 'Your Github API Token'),
+		array('name' => 'owner', 'type' => 'text', 'help' => 'The repository owner'),
+		array('name' => 'repository', 'type' => 'text', 'help' => 'The repository name'),
 		array('name' => 'Watch for tag', 'type' => 'text', 'placeholder' => '#github', 'help' => 'Tickets with this tag will create an issue in GitHub.'),
 	);
 
