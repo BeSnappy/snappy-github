@@ -49,6 +49,7 @@ class App extends BaseApp implements TagsChangedHandler {
 		array('name' => 'token', 'type' => 'text', 'help' => 'Enter your Github API Token'),
 		array('name' => 'owner', 'type' => 'text', 'help' => 'Enter the repository owner'),
 		array('name' => 'repository', 'type' => 'text', 'help' => 'Enter the repository name'),
+		array('name' => 'tag', 'type' => 'text', 'help' => 'Enter the tag that should trigger the app'),
 	);
 
 	/**
@@ -61,7 +62,7 @@ class App extends BaseApp implements TagsChangedHandler {
 	 */
 	public function handleTagsChanged(array $ticket, array $added, array $removed)
 	{
-		if (in_array('#github', $added))
+		if (in_array($this->config['tag'], $added))
 		{
 			$client = $this->getClient();
 
