@@ -1,10 +1,10 @@
 {
-    "name": "vendor/project",
-    "description": "",
+    "name": "snappy/github",
+    "description": "Convert Snappy tickets into Github issues.",
     "authors": [
         {
-            "name": "Your Name",
-            "email": "your@email.com"
+            "name": "UserScape, Inc.",
+            "email": "it@userscape.com"
         }
     ],
     "require": {
