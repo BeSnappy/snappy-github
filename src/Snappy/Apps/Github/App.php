@@ -84,7 +84,7 @@ class App extends BaseApp implements TagsChangedHandler {
 	{
 		$client = new \Github\Client;
 
-		$client->authenticate($this->config['token']);
+		$client->authenticate($this->config['token'], null, \Github\Client::AUTH_HTTP_TOKEN);
 
 		return $client;
 	}
