@@ -34,6 +34,13 @@ class App extends BaseApp implements TagsChangedHandler {
 	public $icon = 'github.png';
 
 	/**
+	 * The application service's main website.
+	 *
+	 * @var string
+	 */
+	public $website = 'https://github.com';
+
+	/**
 	 * The application author name.
 	 *
 	 * @var string
