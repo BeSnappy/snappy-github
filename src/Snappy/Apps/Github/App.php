@@ -1,6 +1,7 @@
 <?php namespace Snappy\Apps\Github;
 
 use Snappy\Apps\App as BaseApp;
+use Illuminate\Support\Collection;
 use Snappy\Apps\TagsChangedHandler;
 
 class App extends BaseApp implements TagsChangedHandler {
@@ -81,7 +82,8 @@ class App extends BaseApp implements TagsChangedHandler {
 			$client = $this->getClient();
 
 			$link = 'URL: https://app.besnappy.com/#ticket/'.$ticket['id'];
-			$body = head($ticket['notes']);
+			$collection = Collection::make($ticket['notes']);
+			$body = $collection->sortBy(function($n) { return $n['id']; })->first();
 			$body = $body['content'];
 
 			$client->api('issues')->create($this->config['owner'], $this->config['repository'], array(
