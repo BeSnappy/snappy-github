@@ -81,7 +81,7 @@ class App extends BaseApp implements TagsChangedHandler {
 			$client = $this->getClient();
 
 			$link = 'URL: https://app.besnappy.com/#ticket/'.$ticket['id'];
-			$body = head($ticket['notes']);
+			$body = last($ticket['notes']);
 			$body = $body['content'];
 
 			$client->api('issues')->create($this->config['owner'], $this->config['repository'], array(
