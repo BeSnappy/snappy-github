@@ -75,7 +75,7 @@ class App extends BaseApp implements TagsChangedHandler {
 	 * @param  array  $removed
 	 * @return void
 	 */
-	public function handleTagsChanged(array $ticket, array $added, array $removed)
+	public function handleTagsChanged(array $ticket, $message = null, array $added, array $removed)
 	{
 		if (in_array($this->config['tag'], $added))
 		{
